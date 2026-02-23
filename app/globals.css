@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-calmBg text-textMain antialiased;
+}
+
+body.high-contrast {
+  @apply bg-white text-black;
+}
+
+body.large-text {
+  font-size: 1.1rem;
+}
+
+body.reduce-motion *,
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/40;
+}
+
+.card {
+  @apply rounded-2xl bg-calmCard p-5 shadow-sm;
+}
+
+.high-contrast .card {
+  @apply border-2 border-black;
+}
